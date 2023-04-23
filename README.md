@@ -1,4 +1,4 @@
-# TikZ Code Snippet | Flock Nodes with Trust Edges ![Build Status](https://github.com/purbancz/purbancz/tikz-flock-nodes-trust-edges/workflows/build/badge.svg) ![GitHub](https://img.shields.io/github/license/purbancz/tikz-flock-nodes-trust-edges)
+# TikZ Code Snippet | Flock Nodes with Trust Edges ![build](https://github.com/purbancz/tikz-flock-nodes-trust-edges/actions/workflows/build.yml/badge.svg) ![GitHub](https://img.shields.io/github/license/purbancz/tikz-flock-nodes-trust-edges)
 
 
 ### Table of Contents
