@@ -1,0 +1,37 @@
+%Copyright (c) 2023 Piotr Urbańczyk
+
+%Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+%The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+%THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+
+\documentclass{standalone}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\begin{document}
+\begin{tikzpicture}
+  \node[draw,circle,fill,minimum size=6mm] (A) at (0+rand,1+rand) {};
+  \node[draw,circle,fill,minimum size=6mm] (B) at (4+rand,0+rand) {};
+  \node[draw,circle,fill,minimum size=6mm] (C) at (2+rand,-4+rand) {};
+  \node[draw,circle,fill,minimum size=6mm] (D) at (-2+rand,-4+rand) {};
+  \node[draw,circle,fill,minimum size=6mm] (E) at (6+rand,-4+rand) {};
+  
+  \foreach \x in {1,...,10}{
+    \node[draw,circle,fill,inner sep=1pt+rand*1pt] at ($(A)+(360/10*\x+rand*10:0.6+rand/5)$) {};
+    \node[draw,circle,fill,inner sep=1pt+rand*1pt] at ($(B)+(360/8*\x+rand*10:0.6+rand/5)$) {};
+    \node[draw,circle,fill,inner sep=1pt+rand*1pt] at ($(C)+(360/12*\x+rand*10:0.6+rand/5)$) {};
+    \node[draw,circle,fill,inner sep=1pt+rand*1pt] at ($(D)+(360/9*\x+rand*10:0.6+rand/5)$) {};
+    \node[draw,circle,fill,inner sep=1pt+rand*1pt] at ($(E)+(360/11*\x+rand*10:0.6+rand/5)$) {};
+  }
+  
+  \draw[line width=2pt,shorten >=-3pt,shorten <=-3pt] (A) -- (B);
+  \draw[line width=4pt,shorten >=-3pt,shorten <=-3pt] (B) -- (C);
+  \draw[line width=1pt,shorten >=-3pt,shorten <=-3pt] (C) -- (A);
+  \draw[line width=2pt,shorten >=-3pt,shorten <=-3pt] (C) -- (E);
+  \draw[line width=5pt,shorten >=-3pt,shorten <=-3pt] (D) -- (B);
+  \draw[line width=3pt,shorten >=-3pt,shorten <=-3pt] (A) -- (D);
+  \draw[line width=6pt,shorten >=-3pt,shorten <=-3pt] (B) -- (E);
+\end{tikzpicture}
+\end{document}
